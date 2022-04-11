@@ -4,16 +4,15 @@ public class Wetland{
 
 	private String name;
 	private int locationZone;
-	private int type;
+	private String type;
 	private double area;
 	private String urlPhoto;
-	private boolean protectedArea;
+	private String protectedArea;
 	private String zoneName;
 	public static final int MAX_EVENT = 10;
 	private Event [] wetlandEvent;
-	private Specie [] newSpecie;
 
-	public Wetland(String name, int locationZone, int type, double area, String urlPhoto, boolean protectedArea, String zoneName){
+	public Wetland(String name, int locationZone, String type, double area, String urlPhoto, String protectedArea, String zoneName){
 		this.name = name;
 		this.locationZone = locationZone;
 		this.type = type;
@@ -22,18 +21,6 @@ public class Wetland{
 		this.protectedArea = protectedArea;
 		this.zoneName = zoneName;
 		wetlandEvent = new Event[MAX_EVENT];
-	}
-
-	public boolean hasSpace(){
-		boolean emptyPosition = false;
-		for (int i=0;i<MAX_EVENT && !emptyPosition;i++ ) {
-
-			if (wetlandEvent[i]==null){
-				emptyPosition = true;
-			}
-		}
-
-		return emptyPosition;
 	}
 
 	public int getEmptyPosition(){
@@ -56,20 +43,19 @@ public class Wetland{
 		if (emptypos==-1){
 			out = "El arreglo está lleno";
 		}else {
-			wetlandEvent[emptypos] = new Event(eType,eEventOwner,ePrice,eDescription,wetlandEvent[i].addDate());
+			wetlandEvent[emptypos] = new Event(eType,eEventOwner,ePrice,eDescription,eventDate);
 			out = "Registro Exitoso";	
 		}
 		return out;
 	}
 
-	public String toStringEvent(){
-		String out = "";
-		for (int i=0;i<MAX_EVENT;i++){
-			if (wetlandEvent[i]!=null){
-				out+= "" + wetlandEvent[i];
-			}
-		}
-		return out;
+	public String toString(){
+		return "Nombre del Humedal: " + name + "\n" +
+		"Zona del Humedal: " + zoneName + "\n" +
+		"Tipo del Humedal: " + type + "\n" + 
+		"Area (Km) del Humedal: " + area + "\n" +
+		"Url de la foto del Humedal: " + urlPhoto + "\n" + 
+		"Area Protegida: " + protectedArea; 
 	}
 
 
@@ -91,11 +77,11 @@ public class Wetland{
 		this.locationZone = locationZone;
 	}
 
-	public int getType(){
+	public String getType(){
 		return type;
 	}
 
-	public void setType(int type){
+	public void setType(String type){
 		this.type = type;
 	}
 
@@ -115,11 +101,11 @@ public class Wetland{
 		this.urlPhoto = urlPhoto;
 	}
 
-	public boolean getProtectedArea(){
+	public String getProtectedArea(){
 		return protectedArea;
 	}
 
-	public void setProtectedArea(boolean protectedArea){
+	public void setProtectedArea(String protectedArea){
 		this.protectedArea = protectedArea;
 	}
 
