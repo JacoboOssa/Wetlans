@@ -20,11 +20,11 @@ public class Event{
 
 
 	public String toString(){
-		return "\n Tipo Evento " + type + 
-		"\n Dueño del evento: " + eventOwner + 
-		"\n Precio Evento: " + price + 
-		"\n Descripcion: " + description + 
-		"\n" + dateEvent.toString();
+		return "Tipo de Evento: " + type + "\n" + 
+		"Dueño del evento: " + eventOwner + "\n" + 
+		"Precio Evento: " + "$ " + price + "\n" +
+		"Descripcion: " + description + "\n" + 
+		"Fecha de " + type + " " + dateEvent.toString();
 	}
 
 	public String getType(){

@@ -3,17 +3,21 @@ package model;
 public class Specie{
 	private String name;
 	private String scName;
-	private int migratory;
-	private Type type;
+	private String migratory;
+	private String type;
 
-	public Specie(String name, String scName, int migratory){
+	public Specie(String name, String scName, String migratory,String type){
 		this.name = name;
 		this.scName = scName;
 		this.migratory = migratory;
+		this.type = type;
 	}
 
 	public String toString(){
-		return "\n Nombre Especie:" + name + "\n Nombre Cientifico: " + scName + "\n Migracion: " + migratory + "Tipo:" + type;
+		return "Nombre Especie: " + name + "\n" +
+		 "Nombre Cientifico: " + scName + "\n" +
+		 "Migracion: " + migratory + "\n" +
+		 "Tipo: " + type;
 	}
 
 	public String getName(){
@@ -32,12 +36,19 @@ public class Specie{
 		this.scName = scName;
 	}
 
-	public int getMigratory(){
+	public String getMigratory(){
 		return migratory;
 	}
 
-	public void setMigratory(int migratory){
+	public void setMigratory(String migratory){
 		this.migratory = migratory;
+	}
+
+	public String getType(){
+		return type;
+	}
+	public void setType(String type){
+		this.type = type;
 	}
 
 	

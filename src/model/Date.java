@@ -13,7 +13,7 @@ public class Date{
 	}
 
 	public String toString(){
-		return "La fecha del evento:" + day + "/" + month + "/" +year;
+		return ":" + day + "/" + month + "/" +year;
 	}
 
 	public String getDay(){
